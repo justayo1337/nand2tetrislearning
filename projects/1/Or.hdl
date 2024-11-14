@@ -12,4 +12,15 @@ CHIP Or {
 
     PARTS:
     //// Replace this comment with your code.
+//	Not(in=a,out=nota); //probably easier to reuse
+//	Not(in=b,out=notb); //probably easier to reuse
+	Nand(a=a,b=a,out=nota);
+	Nand(a=b,b=b,out=notb);
+	Nand(a=nota,b=notb,out=out);
+
+/*	0011
+	0101
+	0111 - OR
+	1110 - NAND
+*/
 }

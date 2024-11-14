@@ -12,4 +12,16 @@ CHIP Xor {
 
     PARTS:
     //// Replace this comment with your code.
+	
+	Nand(a=b,b=b,out=notb);
+	Nand(a=a,b=a,out=nota);
+	Nand(a=a,b=notb,out=and1);
+	Nand(a=and1,b=and1,out=and2);
+	Nand(a=nota,b=b,out=and3);
+	Nand(a=and3,b=and3,out=and4);
+
+	Nand(a=and2,b=and2,out=notand2);
+	Nand(a=and4,b=and4,out=notand4);
+	Nand(a=notand2, b=notand4, out=out);
+
 }
